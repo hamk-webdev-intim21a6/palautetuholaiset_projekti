@@ -347,7 +347,7 @@ healthchecksdb
 MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
-# Django database & Mac OSX Finder prefs
+# Mac OSX Finder prefs & Django database file
 
 .ionide/
 .DS_Store
