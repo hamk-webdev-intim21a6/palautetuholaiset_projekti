@@ -8,13 +8,13 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # huonoa
 # automaattisesti luotu aikaleima
 
-class Topic(models.Model):
+class Movie(models.Model):
     name = models.CharField(max_length=200)
     def __str__(self):
         return self.name
 
 class Feedback(models.Model):
-    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     rating = models.IntegerField(default=50, validators=[MinValueValidator(1), MaxValueValidator(100)])
     good = models.TextField(max_length=2000, blank=True)
     bad = models.TextField(max_length=2000, blank=True) 
