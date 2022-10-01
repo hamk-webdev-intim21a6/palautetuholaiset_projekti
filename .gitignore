@@ -10,11 +10,6 @@
 *.userosscache
 *.sln.docstates
 
-# Django database & Mac OSX Finder prefs
-
-db.sqlite3
-.DS_Store
-
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -352,4 +347,8 @@ healthchecksdb
 MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
+# Django database & Mac OSX Finder prefs
+
 .ionide/
+.DS_Store
+db.sqlite3
