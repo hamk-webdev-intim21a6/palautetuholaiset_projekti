@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     
-    'dictionary.apps.DictionaryConfig',
+    'feedback.apps.FeedbackConfig',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',

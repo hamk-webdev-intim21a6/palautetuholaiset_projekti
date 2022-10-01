@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class DictionaryConfig(AppConfig):
+class FeedbackConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'dictionary'
+    name = 'feedback'
