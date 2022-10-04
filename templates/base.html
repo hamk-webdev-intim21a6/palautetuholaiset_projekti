@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+{% load ratings %}
 <html>
 <head>
     <meta charset="UTF-8">
@@ -69,7 +71,11 @@
     <div class="wrapper">
     <a href="/"><img src="https://img.favpng.com/3/11/25/film-reel-royalty-free-clip-art-png-favpng-ZJ1qxTYJZ4ZmM9LasGM7m5bSz.jpg" width=50%></a>
     
+    
     {% block content %}
+    {% ratings object %}
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
     {% endblock %}
     </div>
 
