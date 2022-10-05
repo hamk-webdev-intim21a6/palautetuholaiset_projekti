@@ -6,9 +6,9 @@ class MovieAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ('movie', 'rating', 'good', 'bad', 'date')
-    list_filter = ['date', 'movie']
-    search_fields = ['good', 'bad']
+    list_display = ('elokuva', 'arvosana', 'plussat', 'miinukset', 'aika')
+    list_filter = ['aika', 'elokuva']
+    search_fields = ['plussat', 'miinukset']
    
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(Feedback, FeedbackAdmin)

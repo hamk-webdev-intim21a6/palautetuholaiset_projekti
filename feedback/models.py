@@ -7,13 +7,13 @@ class Movie(models.Model):
         return self.name
 
 class Feedback(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
-    rating = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(5)])
-    good = models.TextField(max_length=2000, blank=True)
-    bad = models.TextField(max_length=2000, blank=True) 
-    date = models.DateTimeField(auto_now_add=True)
+    elokuva = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    arvosana = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(5)])
+    plussat = models.TextField(max_length=2000, blank=True)
+    miinukset = models.TextField(max_length=2000, blank=True) 
+    aika = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f"{self.date}"
+        return f"{self.aika}"
     
     
