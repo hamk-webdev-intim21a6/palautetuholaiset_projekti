@@ -3,6 +3,10 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Movie(models.Model):
     name = models.CharField(max_length=200)
+
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self):
         return self.name
 
@@ -14,6 +18,5 @@ class Feedback(models.Model):
     aika = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f"{self.aika}"
-    
+        return f"{self.aika}"   
     
