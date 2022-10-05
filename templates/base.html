@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Palautetuholaiset - Web-ohjelmointi - INTIM21A6</title>
     <meta name="description" content="Web-ohjelmointi-kurssin ryhmätyö">
 </head>
 <body>
     <style>
-    .wrapper {
+
+      .wrapper {
         width: 960px;
         margin: 0 auto;
       }
@@ -43,24 +43,33 @@
       body {
         background: #2980b9;
         color: #FFF;
-        font-family: Helvetica;
         text-align: center;
-        margin: 0;
+
+          margin: 40px auto 0px;
+          max-width: 1000px;
+          min-width: 260px;
+          padding: 0px 20px 0px;
+
+          font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+      
       }
       
       header,
       nav,
       section {
         border: 1px solid rgba(255,255,255,0.8);
+        border-radius: 25px;
         margin-bottom: 10px;
         border-radius: 3px;
       }
       
       header {
+        border-radius: 25px;
         padding: 20px 0;
       }
       
       nav, section {
+        border-radius: 25px;
         padding: 10px 0;
       }
     </style>
@@ -68,10 +77,12 @@
     <br>
     <div class="wrapper">
     <a href="/"><img src="https://img.favpng.com/3/11/25/film-reel-royalty-free-clip-art-png-favpng-ZJ1qxTYJZ4ZmM9LasGM7m5bSz.jpg" width=50%></a>
-    
+
     {% block content %}
     {% endblock %}
+
     </div>
+    <BR><BR>
 
 </body>
 </html>
