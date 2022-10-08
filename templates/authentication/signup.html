@@ -1,41 +1,114 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
 
 <header>
-    <h1>Rekisteröidy Palautetuholaisiin</h1>
+
+  <br>
+  <a href="/"><img src="https://img.favpng.com/3/11/25/film-reel-royalty-free-clip-art-png-favpng-ZJ1qxTYJZ4ZmM9LasGM7m5bSz.jpg" alt="PalauteTuholaiset-logo" width=50%></a>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <br>
+        <strong>Tiedoksesi: </strong> {{ message }}
+    </div>
+    {% endfor %}
+    <p>
+    <h1>Rekisteröidy Palautetuholaisiin!</h1>
+    </p>
+
 </header>
 
-<nav>
-    <p>Web-ohjelmointi</p>
-    <p>Aleksi Bovellan<BR>Satu Pohjonen<BR>Robin Selenius</p>
-    <p>INTIM21A6</p>
-</nav>
+<div id="framecontainer1">
+  <div id="frameleftupper">
+    <div>
+      <p class="framep center">
+        <nav>
+          <center>
+          <p><b>Web-ohjelmointi</b></p>
+          <p>Aleksi Bovellan<BR>Satu Pohjonen<BR>Robin Selenius</p>
+          <p>INTIM21A6</p>
+          </center>
+        </nav>
+      </p>
+    </div>
+  </div>
 
-<section>
-    <form action="/signup" method="post">
-    {% csrf_token %}
-    <br>
-    <label for="">Käyttäjätunnuksesi: </label>
-    <input type="text" id="username" name="username" placeholder="Käyttäjätunnus (vain kirjaimia)" Required>
-    <br><br>
-    <label for="">Etunimi: </label>
-    <input type="text" id="fname" name="fname" placeholder="Kirjoita etunimesi"Required>
-    <br><br>
-    <label for="">Sukunimi: </label>
-    <input type="text" id="lname" name="lname" placeholder="Kirjoita sukunimesi" Required>
-    <br><br>
-    <label for="">Email: </label>
-    <input type="email" id="email" name="email" placeholder="Kirjoita sähköpostiosoitteesi" Required>
-    <br><br>
-    <label for="">Salasana: </label>
-    <input type="password" id="pass1" name="pass1" placeholder="Kirjoita salasanasi" Required>
-    <br><br>
-    <label for="">Vahvista salasanasi: </label>
-    <input type="password" id="pass2" name="pass2" placeholder="Vahvista salasanasi" Required>
-    <br><br><br>
-    <button type="submit">Rekisteröidy</button>
-    <script src="" async defer></script>
-</section>
+  <div id="framerightupper">
+    <div>
+        <p class="framep center">
+            <section>
+                <p>
+                <center>
+                <form action="/signup" method="post">
+                {% csrf_token %}
+                <table>
+                    <tr><td>
+                <label for="">Käyttäjätunnuksesi: </label>
+                    </td><td>
+                <input type="text" id="username" name="username" placeholder="Käyttäjätunnus (vain kirjaimia)" Required>
+                    </td>
+            
+                </tr>
+                <tr>
+                    <td>
+                <label for="">Etunimi: </label></td><td>
+                <input type="text" id="fname" name="fname" placeholder="Kirjoita etunimesi"Required>
+                </td>
+            </tr>
+            <tr><td>
+                <label for="">Sukunimi: </label></td><td>
+                <input type="text" id="lname" name="lname" placeholder="Kirjoita sukunimesi" Required>
+                </td>
+            </tr>
+            <tr><td>
+                <label for="">Email: </label></td><td>
+                <input type="email" id="email" name="email" placeholder="Kirjoita sähköpostiosoitteesi" Required>
+                </td>
+
+            </tr>
+            <tr><td>
+                <label for="">Salasana: </label></td><td>
+                <input type="password" id="pass1" name="pass1" placeholder="Kirjoita salasanasi" Required>
+                </td>
+
+            </tr>
+            <tr><td>
+                <label for="">Vahvista salasanasi: </label>
+            </td><td>
+                <input type="password" id="pass2" name="pass2" placeholder="Vahvista salasanasi" Required>
+            </td>
+
+        </tr></table>
+            <p>
+                <br>
+                <button type="submit">Rekisteröidy</button>
+                <script src="" async defer></script>
+
+            </p>
+
+            <p>
+                <br>
+                <a href="/">Palaa pääsivulle</a>
+            </p>
+        </center>
+        </p>
+            </section>
+        </p>
+    </div>
+  </div>
+
+</div> 
+
+<footer>
+    <hr>
+    <div>
+        <p id="footerp">
+            Hämeen Ammattikorkeakoulu <a href="http://www.hamk.fi" title="HAMKin kotisivu"><u>HAMK</u></a> - INTIM21A6 - Web-ohjelmointi (2022)
+        </p>
+    </div>
+</footer>
+
 
 {% endblock %}
