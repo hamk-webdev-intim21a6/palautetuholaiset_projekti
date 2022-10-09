@@ -20,21 +20,21 @@ def signup(request):
         pass2 = request.POST['pass2']
 
         if User.objects.filter(username=username):
-            messages.error(request, "Username already exist! Please try some other username")
+            messages.error(request, "Käyttäjänimi on jo olemassa! Kokeile jotain toista käyttäjänimeä")
             return redirect('home')
         
         if User.objects.filter(email=email):
-            messages.error(request, "Email already registered")
+            messages.error(request, "Sähköpostiosoite on jo rekisteröity")
             return redirect('home')
         
         if len(username)>10:
-            messages.error(request, "Username must be under 10 characters")
+            messages.error(request, "Käyttäjänimen tulee olla lyhyempi kuin 10 merkkiä")
 
         if pass1 != pass2:
-            messages.error(request, "Passwords didn't match!")
+            messages.error(request, "Salasanat eivät täsmänneet!")
         
         if not username.isalnum():
-            message.error(request, "Username must be Alpha-Numeric")
+            messages.error(request, "Käyttäjänimen tulee sisältää vain kirjaimia ja numeroita")
             return redirect('home')
 
             
