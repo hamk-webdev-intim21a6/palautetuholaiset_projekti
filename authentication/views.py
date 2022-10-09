@@ -25,7 +25,7 @@ def signup(request):
 
         myuser.save()
 
-        messages.success(request, "Your Account has been succesfully created.")
+        messages.success(request, "Käyttäjätunnus on luotu onnistuneesti.")
 
         return redirect('signin')
 
@@ -46,12 +46,12 @@ def signin(request):
             return render(request, "authentication/index.html", {'fname': fname})
 
         else:
-            messages.error(request, "Bad Credentials!")
+            messages.error(request, "Tunnukset eivät toimineet!")
             return redirect('home')
 
     return render(request, "authentication/signin.html")
 
 def signout(request):
     logout(request)
-    messages.success(request, "Logged out succesfully!")
+    messages.success(request, "Kirjauduttu ulos onnistuneesti!")
     return redirect('home')
