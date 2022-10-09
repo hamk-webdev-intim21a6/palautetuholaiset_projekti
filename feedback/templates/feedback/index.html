@@ -1,82 +1,76 @@
-
 {% extends 'base.html' %}
 
 {% block content %}
 
 <header>
 
-  <br>
-  <a href="/"><img src="https://img.favpng.com/3/11/25/film-reel-royalty-free-clip-art-png-favpng-ZJ1qxTYJZ4ZmM9LasGM7m5bSz.jpg" alt="PalauteTuholaiset-logo, klikkaa tätä palataksesi etusivulle" width=50%></a>
+        <br>
+        <a href="/"><img src="https://img.favpng.com/3/11/25/film-reel-royalty-free-clip-art-png-favpng-ZJ1qxTYJZ4ZmM9LasGM7m5bSz.jpg"
+                        alt="PalauteTuholaiset-logo, klikkaa tätä palataksesi etusivulle" width=50%></a>
 
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-    <br>
-        <strong>Tiedoksesi: </strong> {{ message }}
-    </div>
-    {% endfor %}
-    <p>
-    <h1>Palautetuholaisten elokuvatietokanta</h1>
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <br>
+                <strong>Tiedoksesi: </strong> {{ message }}
+        </div>
+        {% endfor %}
+        <p>
+        <h1>Palautetuholaisten elokuvatietokanta</h1>
 
-    <h2>Anna elokuville jokin arvosana 1 ja 5 väliltä.</h2>
-    </p>
+        <h2>Anna elokuville jokin arvosana 1 ja 5 väliltä.</h2>
+        </p>
 </header>
 
 <div id="framecontainer1">
-  <div id="frameleftupper">
-    <div>
-      <p class="framep center">
-        <nav>
-          <center>
-          <p><b>Web-ohjelmointi</b></p>
-          <p>Aleksi Bovellan<br>Satu Pohjonen<br>Robin Selenius</p>
-          <p>INTIM21A6</p>
-          </center>
-        </nav>
-      </p>
-    </div>
-  </div>
+        <div id="frameleftupper">
+                <div>
+                        <p class="framep center">
+                        <nav>
+                                <center>
+                                        <p><b>Web-ohjelmointi</b></p>
+                                        <p>Aleksi Bovellan<br>Satu Pohjonen<br>Robin Selenius</p>
+                                        <p>INTIM21A6</p>
+                                </center>
+                        </nav>
+                        </p>
+                </div>
+        </div>
 
-  <div id="framerightupper">
-    <div>
-        <p class="framep center">
-                <section>
-                        <center>
-                        {% if user.is_authenticated %}
-  
-                        <form action="" method="post">
-                                {% csrf_token %}
-                                <table>
-                                {{ form.as_table }}
-                                </table>
-                                <br>
-                                <input type="submit" value="Tallenna">
-                        </form>
+        <div id="framerightupper">
+                <div>
+                        <p class="framep center">
+                        <section>
+                                <center>
+                                        {% if user.is_authenticated %}
 
-                        <br><br>
-                        <button type="submit"> <a href="/signout"> Kirjaudu ulos</a></button>
-                        {% else %}
-                        <h4>Sinun on oltava kirjautunut sisään päästäksesi arvostelemaan surkeita elokuviamme.</h4>
-                        <button type="submit"> <a href="/signup"> Rekisteröidy</a></button>
-                        <button type="submit"> <a href="/signin"> Kirjaudu sisään</a></button>
-                        {% endif %}
-                        <script src="" async defer></script>
-                        </center>
-                </section>
-        </p>
-        <br>
-    </div>
-  </div>
+                                        <form action="" method="post">
+                                                {% csrf_token %}
+                                                <table>
+                                                        {{ form.as_table }}
+                                                </table>
+                                                <br>
+                                                <input type="submit" value="Tallenna">
+                                        </form>
 
-</div> 
+                                        <br><br>
+                                        <button type="submit"> <a href="/signout"> Kirjaudu ulos</a></button>
+                                        {% else %}
+                                        <h4>Sinun on oltava kirjautunut sisään päästäksesi arvostelemaan surkeita
+                                                elokuviamme.</h4>
+                                        <button type="submit"> <a href="/signup"> Rekisteröidy</a></button>
+                                        <button type="submit"> <a href="/signin"> Kirjaudu sisään</a></button>
+                                        {% endif %}
+                                        <script src="" async defer></script>
+                                </center>
+                        </section>
+                        </p>
+                        <br>
+                </div>
+        </div>
 
-        <footer>
-            <hr>
-            <div>
-                <p id="footerp">
-                    Hämeen Ammattikorkeakoulu <a href="http://www.hamk.fi" title="HAMKin kotisivu"><u>HAMK</u></a> - INTIM21A6 - Web-ohjelmointi (2022)
-                </p>
-            </div>
-        </footer>
+</div>
+
+
 
 
 {% endblock %}
