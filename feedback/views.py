@@ -5,7 +5,7 @@ from django.urls.base import reverse_lazy
 
 class FeedbackCreateView(CreateView):
     model = Feedback
-    fields = ['elokuva', 'arvosana', 'plussat', 'miinukset']
+    fields = ['movie', 'rating', 'good', 'bad']
     template_name = "feedback/index.html"
     success_url = reverse_lazy('feedback:index')
     
