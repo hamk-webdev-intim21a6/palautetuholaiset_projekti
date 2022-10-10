@@ -7,16 +7,14 @@ class MovieAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
     def show_average(self, obj):
-        result = Feedback.objects.filter(elokuva=obj).aggregate(Avg("arvosana"))
-        return result["arvosana__avg"]
+        result = Feedback.objects.filter(movie=obj).aggregate(Avg("rating"))
+        return result["rating__avg"]
 
 class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ('elokuva', 'arvosana', 'plussat', 'miinukset', 'aika')
-    list_filter = ['aika', 'elokuva']
-    search_fields = ['plussat', 'miinukset']
+    list_display = ('movie', 'rating', 'user', 'good', 'bad', 'date')
+    list_filter = ['date', 'movie']
+    search_fields = ['good', 'bad']
 
   
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
-
-
